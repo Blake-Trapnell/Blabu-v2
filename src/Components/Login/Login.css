@@ -1,0 +1,6 @@
+.Login--content-wrapper {
+	height: 90vh;
+	width: 100vw;
+	display: flex;
+	justify-content: space-evenly;
+}

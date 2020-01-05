@@ -1,0 +1,6 @@
+.Header--Header-wrapper {
+	width: 100vw;
+	height: 10vh;
+	background: linear-gradient(45deg, rgba(216, 0, 184, 0.733), rgba(255, 48, 169, 0.733), rgba(45, 143, 255, 0.795));
+	background-color: #E5ECE9;
+}
