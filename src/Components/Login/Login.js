@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header/Header"
-import axios from "axios";
-import swal from "sweetalert2";
+import Functions from "../../utils/functions.js";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import "./Login.css"
@@ -19,7 +18,7 @@ class Login extends Component {
 		}, () => { console.log(this.state) })
 	}
 
-	
+
 
 	render() {
 		return (
@@ -31,7 +30,7 @@ class Login extends Component {
 						<input onChange={(e) => { this.inputHandler("username", e.target.value) }} className="login--input" />
 						<h1>Password</h1>
 						<input onChange={(e) => { this.inputHandler("password", e.target.value) }} className="login--input" />
-						<button className="login--button">Login</button>
+						<button onClick={()=>{Functions.logmein()}} className="login--button">Login</button>
 					</div>
 					<div className="login--sign-up">
 						<h1>new user?</h1>
