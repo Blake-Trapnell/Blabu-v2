@@ -1,14 +1,15 @@
 import axios from "axios"
 import Swal from "sweetalert2"
 
-async function logmein() {
+async function logmein(userinfo) {
+	console.log("logmein hit", userinfo)
 	const Toast = Swal.mixin({
 		toast: true,
 		position: 'top-end',
 		showConfirmButton: false,
 		timer: 3000
 	})
-	const { username, password } = this.state;
+	const { username, password } = userinfo
 	let user = await axios.post('/auth/users/login', { username, password });
 	switch (user.message) {
 		case "logged in":

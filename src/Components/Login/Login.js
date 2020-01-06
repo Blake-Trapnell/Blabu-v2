@@ -15,7 +15,7 @@ class Login extends Component {
 	inputHandler = (key, value) => {
 		this.setState({
 			[key]: value
-		}, () => { console.log(this.state) })
+		})
 	}
 
 
@@ -30,7 +30,7 @@ class Login extends Component {
 						<input onChange={(e) => { this.inputHandler("username", e.target.value) }} className="login--input" />
 						<h1>Password</h1>
 						<input onChange={(e) => { this.inputHandler("password", e.target.value) }} className="login--input" />
-						<button onClick={()=>{Functions.logmein()}} className="login--button">Login</button>
+						<button onClick={()=>{Functions.logmein(this.state)}} className="login--button">Login</button>
 					</div>
 					<div className="login--sign-up">
 						<h1>new user?</h1>

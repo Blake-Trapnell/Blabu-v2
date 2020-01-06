@@ -20,7 +20,6 @@ app.use(express.json())
 //Authentication
 app.post('/auth/users/login', aCtrl.login)
 app.post('/auth/users/register', aCtrl.register)
-app.get('/auth/user', aCtrl.setUser)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db',db)
