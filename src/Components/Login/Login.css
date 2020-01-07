@@ -3,6 +3,7 @@
 .login--blabu {
 	font-size: 50px;
 	color: rgb(82, 205, 253);
+	text-shadow: 2px 2px 5px rgb(79, 29, 99);
 }
 
 .Login--content-body{
@@ -31,7 +32,7 @@
 	align-items: center;
 	background: white;
 	border-radius: 10px;
-	box-shadow: 2px 5px 30px 1px rgb(73, 73, 73);
+	box-shadow: 5px 5px 30px 1px rgb(33, 0, 53);
 }
 .login--sign-up {
 	height: 100%;
@@ -41,7 +42,7 @@
 	align-items: center;
 	background: white;
 	border-radius: 10px;
-	box-shadow: 2px 5px 30px 1px rgb(73, 73, 73);
+	box-shadow: 2px 5px 30px 1px rgb(33, 0, 53);
 }
 
 .login--button {
