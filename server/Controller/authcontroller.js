@@ -3,13 +3,13 @@ module.exports = {
     register: async (req,res) => {
         const db = req.app.get('db')
         const {username, password, email} = req.body
-        const user = await db.auth.check_if_username_is_taken([username, email])
+		const user = await db.auth.check_if_username_is_taken([username, email])
         if (user.length > 0) {
             return res.status(200).send({message: 'username & or email is in use'})
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const newUser = await db.auth.Register_user([username, email, hash])
+		const newUser = await db.auth.Register_user([username, email, hash])
             req.session.user = newUser[0]
             res.status(200).send({
                 message: 'logged in',
@@ -18,8 +18,8 @@ module.exports = {
             })
     },
     login: async (req, res) => {
-        const db = req.app.get('db')
-        const {username, password} = req.body
+		const db = req.app.get('db')
+		const {username, password} = req.body
         const user = await db.auth.find_user([username])
         if (user.length === 0) {
             return res.status(200).send({message: 'Username not found'})
@@ -35,7 +35,6 @@ module.exports = {
         }
     },
     setUser: async (req,res) => {
-        const db = req.app.get('db')
         res.status(200).send(req.session.user)
     }
 }

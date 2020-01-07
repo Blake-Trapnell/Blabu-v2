@@ -1,26 +1,72 @@
-.Login--content-wrapper {
-	height: 90vh;
+@import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption&display=swap');
+
+.login--blabu {
+	font-size: 50px;
+	color: rgb(82, 205, 253);
+}
+
+.Login--content-body{
+	height: 100vh;
 	width: 100vw;
 	display: flex;
-	justify-content: space-evenly;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'PT Serif Caption', serif;
+	font-size: 17px;
+	color: rgb(79, 29, 99);
+	background: whitesmoke;
+}
+
+.login--content-wrapper {
+	height:  70%;
+	width: 30%;
+	display: flex;
 }
 
 .login--sign-in {
+	height: 60%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 2px 5px 30px 1px rgb(73, 73, 73);
 }
 .login--sign-up {
+	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 2px 5px 30px 1px rgb(73, 73, 73);
 }
 
 .login--button {
  height: 30px;
  width: 80px;
- background: linear-gradient(45deg, rgba(216, 0, 184, 0.733), rgba(255, 48, 169, 0.733), rgba(45, 143, 255, 0.795));
+ background: linear-gradient(45deg, rgba(216, 0, 184, 0.733), rgba(255, 48, 169, 0.733), rgba(97, 191, 250, 0.781));
  border: none;
  border-radius: 4px;
  margin: 10px;
+}
+
+.login--account{
+	cursor: pointer;
+	height: 30px;
+	width: 80%;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 13px;
+	font-style: italic;
+	text-decoration: underline;
+}
+.login--account:hover {
+	font-size:14px;
+	transition: .5s;
+	color: lightskyblue;
 }
 
 .login--input {
