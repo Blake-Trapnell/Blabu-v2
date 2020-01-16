@@ -6,6 +6,3 @@ INSERT INTO buckets (
 	)
 VALUES 
 	( $1, $2, $3, $4 );
-
-RETURNING * FROM buckets
-WHERE user_id = $1;

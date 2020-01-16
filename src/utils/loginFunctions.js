@@ -1,5 +1,5 @@
-import axios from "axios"
-import Swal from "sweetalert2"
+import axios from "axios";
+import Swal from "sweetalert2";
 import {withRouter} from "react-router-dom"
 
 async function logmein(userinfo, props) {
@@ -81,7 +81,7 @@ async function registerMe(registerInfo, props) {
    
 }
 
-export default withRouter( {
+export default withRouter({
 	logmein,
 	registerMe,
 })

@@ -25,6 +25,7 @@ app.get('/auth/user', aCtrl.setUser)
 
 //Account
 app.post('/user/buckets', accCtrl.getBuckets)
+app.get('/user/buckets', accCtrl.getBuckets)
 app.post('/user/add/bucket', accCtrl.addBucket)
 
 massive(CONNECTION_STRING).then(db => {

@@ -1,0 +1,39 @@
+.buckets--outer-container {
+	display: flex;
+	font-size: 10px;
+	width: 800px;
+	height: 100vh;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: flex-start;
+}
+
+.buckets--inner-container {
+	height: 200px;
+	width: 200px;
+	margin: 10px;
+	background-color: lightblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.buckets--goal-outer {
+	width: 180px;
+	height: 15px;
+	background-color: whitesmoke;
+	display: flex;
+	border-radius: 2px;
+	justify-content: space-between;
+}
+
+.buckets--goal-inner {
+	height: 15px;
+	background-color: turquoise;
+	border-radius: 2px;
+}
+
+.buckets--amount {
+	position: relative;
+	bottom: 10px;
+}
