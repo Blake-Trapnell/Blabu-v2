@@ -11,23 +11,20 @@ export class BucketController extends Component {
 		})
 	};
 	saveBucket = async (state) => {
-		let { name, starting, goal } = state
 		const Toast = Swal.mixin({
 			toast: true,
 			position: 'top-end',
 			showConfirmButton: false,
 			timer: 3000,
 		})
-		if (name === "") {
+		let { name, starting, goal } = state
+		let res = await Axios.post(`/user/add/bucket`, { name, starting, goal })
+		if (res.data.type === "error") {
 			Toast.fire({
-				type: "error",
-				title: 'Please add bucket name'
+				type: res.data.type,
+				title: res.data.title,
 			})
 		}
-		else if (starting === "") { starting = 0 }
-		else if (goal === "") { goal = 0 }
-		await Axios.post(`/user/add/bucket`, { name, starting, goal })
-		window.location.reload(false)
 	}
 
 	render() {
