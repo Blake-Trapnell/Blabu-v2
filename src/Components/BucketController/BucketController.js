@@ -1,30 +1,13 @@
 import React, { Component } from "react";
-import Swal from "sweetalert2"
 import "./BucketController.css";
-import Axios from "axios";
+import bucketFunctions from "../../utils/bucketFunctions.js";
 
 export class BucketController extends Component {
-
-	inputHandler = (key, value) => {
-		this.setState({
-			[key]: value
-		})
-	};
-	saveBucket = async (state) => {
-		const Toast = Swal.mixin({
-			toast: true,
-			position: 'top-end',
-			showConfirmButton: false,
-			timer: 3000,
-		})
-		let { name, starting, goal } = state
-		let res = await Axios.post(`/user/add/bucket`, { name, starting, goal })
-		if (res.data.type === "error") {
-			Toast.fire({
-				type: res.data.type,
-				title: res.data.title,
-			})
-		}
+	constructor(props) {
+		super(props)
+		this.state = {}
+		this.saveBucket = bucketFunctions.saveBucket.bind(this)
+		this.inputHandler = bucketFunctions.inputHandler.bind(this)
 	}
 
 	render() {

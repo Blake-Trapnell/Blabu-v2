@@ -27,6 +27,7 @@ app.get('/auth/user', aCtrl.setUser)
 app.post('/user/buckets', accCtrl.getBuckets)
 app.get('/user/buckets', accCtrl.getBuckets)
 app.post('/user/add/bucket', accCtrl.addBucket)
+app.put('/api/remove/bucket', accCtrl.removeBucket)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db',db)
