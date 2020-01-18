@@ -29,7 +29,7 @@ class Login extends Component {
 							<input onChange={(e) => { this.inputHandler("username", e.target.value) }} className="login--input" />
 							<h1>Password</h1>
 							<input onChange={(e) => { this.inputHandler("password", e.target.value) }} className="login--input" type="password" />
-							<button onClick={() => { loginFunctions.logmein(this.state, this.props) }} className="login--button">Login</button>
+							<button onClick={() => { loginFunctions.logmein(this.state, this.props) }} className="btn--blue">Login</button>
 							<h1 className ="login--account" onClick={()=>this.inputHandler("signin", !this.state.signin)}>new user?</h1>
 						</div>
 					: null}
@@ -43,7 +43,7 @@ class Login extends Component {
 							<input onChange={(e) => { this.inputHandler("password", e.target.value) }} className="login--input" />
 							<h1>confirm password</h1>
 							<input onChange={(e) => { this.inputHandler("passwordConfirm", e.target.value) }} className="login--input" />
-							<button onClick={() => { loginFunctions.registerMe(this.state, this.props) }} className="login--button">Sign up</button>
+							<button onClick={() => { loginFunctions.registerMe(this.state, this.props) }} className="btn--blue">Sign up</button>
 							<h1 className="login--account" onClick={()=>this.inputHandler("signin", !this.state.signin)}>Sign in</h1>
 						</div>
 					: null}
