@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./BucketController.css";
+import "./BucketController.scss";
 import bucketFunctions from "../../utils/bucketFunctions.js";
+import functions from "../../utils/functions";
 
 export class BucketController extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {}
 		this.saveBucket = bucketFunctions.saveBucket.bind(this)
-		this.inputHandler = bucketFunctions.inputHandler.bind(this)
+		this.inputHandler = functions.inputHandler.bind(this)
 	}
 
 	render() {

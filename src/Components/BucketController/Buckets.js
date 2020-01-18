@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import bucketFunctions from "../../utils/bucketFunctions.js";
 import axios from "axios";
-import "./Buckets.css"
+import "./Buckets.scss"
 
 export default class Buckets extends Component {
 	constructor(props) {
@@ -34,7 +34,6 @@ export default class Buckets extends Component {
 							width: percentage
 						}
 						return (
-
 							<div className="buckets--inner-container" key={i}>
 								<h1>{el.name}</h1>
 								<div className="buckets--goal-outer">
@@ -48,7 +47,7 @@ export default class Buckets extends Component {
 						)
 					})
 					:
-					null
+					<h1>Loading</h1>
 				}
 			</div>
 		);
