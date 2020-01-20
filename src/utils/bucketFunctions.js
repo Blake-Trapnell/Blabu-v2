@@ -2,7 +2,6 @@ import axios from "axios";
 import Swal from "sweetalert2"
 
 export async function removeBucket(bucket_id, i) {
-	console.log(`bucket_id ${bucket_id}, index ${i}`)
 	axios.put('api/remove/bucket', {bucket_id})
 	let { buckets } = this.state
 	buckets.splice(i, 1)

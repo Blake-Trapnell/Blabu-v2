@@ -42,7 +42,7 @@ export default class Buckets extends Component {
 						return (
 
 							<div className="buckets--flip-card">
-							<div className={this.state.flip ? "buckets--flip-card-inner-flipped" : "buckets--flip-card-inner"} >
+							<div className={this.state[i] ? "buckets--flip-card-inner-flipped" : "buckets--flip-card-inner"} >
 							  <div class="buckets--flip-card-front">
 								  <div className="buckets--goal-bar">
 							  <div className="buckets--goal-inner" style={innerStyle}></div>
@@ -53,11 +53,11 @@ export default class Buckets extends Component {
 											<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Deposit</button>
 											<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Withdraw</button>
 											<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Transfer</button>
-											<button className="btn--blue" onClick={() => {this.inputHandler("flip", !this.state.flip)}}>Edit</button>
+											<button className="btn--blue" onClick={() => {this.inputHandler(i, !this.state[i])}}>Edit</button>
 										</div>
 							  </div>
 							  <div class="buckets--flip-card-back">
-							  <button className="btn--blue" onClick={() => {this.inputHandler("flip", !this.state.flip)}}>back</button>
+							  <button className="btn--blue" onClick={() => {this.inputHandler(i, !this.state[i])}}>back</button>
 							  </div>
 							</div>
 						  </div>
