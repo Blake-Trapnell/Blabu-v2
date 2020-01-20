@@ -7,8 +7,9 @@ $buttonWidth: 70px;
 $fontFamily: 'PT Serif Caption', serif;
 
 .btn--blue {
-	background: linear-gradient(45deg, $cyanSky, $brightCerulean);
+	background: linear-gradient(45deg, $deepSafron, rgb(255, 207, 50));
 	border: 0;
+	margin: 10px;
 	border-radius: 4px;
 	box-shadow: 2px 3px 5px 1px #58729170;
 	color: whitesmoke;
@@ -23,5 +24,26 @@ $fontFamily: 'PT Serif Caption', serif;
 		background: linear-gradient(45deg, $brightCerulean, $brightTurqoise);
 		box-shadow: 3px 4px 3px 1px #58729134;
 		transform: translateY(-1px) scale(1.03);
+	}
+}
+
+.h1--blue--gradient-text {
+	margin: 10px;
+	font-size: 20px;
+	background: linear-gradient(45deg, $brightCerulean 10%, $brightTurqoise 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.input--orange-outline {
+	height: 20px;
+	font-weight: bold;
+	max-width: 250px;
+	outline: none;
+	border: 2px solid white;
+	border-radius: 4px;
+	color: $cyanSky;
+	&:focus {
+		border: 2px solid $cyanSky;
 	}
 }

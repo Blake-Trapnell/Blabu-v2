@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useLayoutEffect } from "react";
 import axios from "axios"
 import { withRouter } from "react-router-dom";
 import BucketController from "../BucketController/BucketController.js";
@@ -12,23 +12,30 @@ class Home extends Component {
 	}
 	async componentDidMount() {
 		axios.get('/auth/user').then(async (res) => {
-			const {username, user_id} = res.data
+			const { username, user_id } = res.data
 			if (username === undefined) {
 				return this.props.history.push("/")
 			}
-		this.setState({
-			username,
-			user_id
-		})
+			this.setState({
+				username,
+				user_id
+			})
 		})
 	}
 
 	render() {
-		const {user_id} = this.state
+		const { user_id } = this.state
 		return (
-			<div className="home--outer-container">
-				<BucketController />
-				<Buckets user_id={user_id}/>
+			<div className="home--outer">
+				<div className="home--content-container">
+					<div className="home--content">
+						<Buckets user_id={user_id} />
+					</div>
+					<div className="home--side-bar"></div>
+				</div>
+				<div className="home--account-info">
+					<BucketController/>
+				</div>
 			</div>
 		)
 	}

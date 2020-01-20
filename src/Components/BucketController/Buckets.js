@@ -9,14 +9,14 @@ export default class Buckets extends Component {
 		this.state = {
 			buckets: [],
 		}
-	this.removeBucket =	bucketFunctions.removeBucket.bind(this)
+		this.removeBucket = bucketFunctions.removeBucket.bind(this)
 	}
 	async componentDidMount() {
-			let buckets = await axios.post(`/user/buckets`, this.props.user_id)
-			buckets = buckets.data
-			this.setState({
-				buckets,
-			});
+		let buckets = await axios.post(`/user/buckets`, this.props.user_id)
+		buckets = buckets.data
+		this.setState({
+			buckets,
+		});
 	};
 
 
@@ -35,13 +35,17 @@ export default class Buckets extends Component {
 						}
 						return (
 							<div className="buckets--inner-container" key={i}>
-								<h1>{el.name}</h1>
 								<div className="buckets--goal-outer">
 									<div className="buckets--goal-inner" style={innerStyle}>
 										<h5 className="buckets--amount">{el.current_amount}</h5>
 									</div>
 									<h5 className="buckets--amount">{el.goal_amount}</h5>
-								<button onClick={()=> this.removeBucket(el.bucket_id, i)}>remove</button>
+								</div>
+								<h1>{el.name}</h1>
+								<div className="buckets--button-container">
+								<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Deposit</button>
+								<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Withdraw</button>
+								<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Transfer</button>									
 								</div>
 							</div>
 						)
