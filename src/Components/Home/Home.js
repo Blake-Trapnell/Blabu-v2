@@ -1,4 +1,4 @@
-import React, { Component, useLayoutEffect } from "react";
+import React, { Component,} from "react";
 import axios from "axios"
 import { withRouter } from "react-router-dom";
 import BucketController from "../BucketController/BucketController.js";

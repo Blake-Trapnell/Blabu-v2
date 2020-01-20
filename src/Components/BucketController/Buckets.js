@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import bucketFunctions from "../../utils/bucketFunctions.js";
+import functions from "../../utils/functions.js";
 import axios from "axios";
 import "./Buckets.scss"
 
@@ -8,8 +9,10 @@ export default class Buckets extends Component {
 		super(props)
 		this.state = {
 			buckets: [],
+			flip: false,
 		}
 		this.removeBucket = bucketFunctions.removeBucket.bind(this)
+		this.inputHandler = functions.inputHandler.bind(this)
 	}
 	async componentDidMount() {
 		let buckets = await axios.post(`/user/buckets`, this.props.user_id)
@@ -19,35 +22,45 @@ export default class Buckets extends Component {
 		});
 	};
 
-
 	render() {
 		const { buckets } = this.state
 		return (
 			<div className="buckets--outer-container">
 				{buckets ?
 					buckets.map((el, i) => {
-						let percentage = 180 * (el.current_amount / el.goal_amount)
-						if (percentage >= 180) {
-							percentage = 180
+						let containerWidth = 200
+						let percentage = (el.current_amount / el.goal_amount)
+						if (percentage > 1) {
+							percentage = 1
 						}
 						const innerStyle = {
-							width: percentage
+							width: percentage * containerWidth,
+						}
+						const outerStyle = {
+							width: containerWidth
 						}
 						return (
-							<div className="buckets--inner-container" key={i}>
-								<div className="buckets--goal-outer">
-									<div className="buckets--goal-inner" style={innerStyle}>
-										<h5 className="buckets--amount">{el.current_amount}</h5>
-									</div>
-									<h5 className="buckets--amount">{el.goal_amount}</h5>
-								</div>
-								<h1>{el.name}</h1>
-								<div className="buckets--button-container">
-								<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Deposit</button>
-								<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Withdraw</button>
-								<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Transfer</button>									
-								</div>
+
+							<div className="buckets--flip-card">
+							<div className={this.state.flip ? "buckets--flip-card-inner-flipped" : "buckets--flip-card-inner"} >
+							  <div class="buckets--flip-card-front">
+								  <div className="buckets--goal-bar">
+							  <div className="buckets--goal-inner" style={innerStyle}></div>
+							<div className="buckets--goal-outer" style={outerStyle}></div>
+								  </div>
+										<h1>{el.name}</h1>
+										<div className="buckets--button-container">
+											<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Deposit</button>
+											<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Withdraw</button>
+											<button className="btn--blue" onClick={() => this.removeBucket(el.bucket_id, i)}>Transfer</button>
+											<button className="btn--blue" onClick={() => {this.inputHandler("flip", !this.state.flip)}}>Edit</button>
+										</div>
+							  </div>
+							  <div class="buckets--flip-card-back">
+							  <button className="btn--blue" onClick={() => {this.inputHandler("flip", !this.state.flip)}}>back</button>
+							  </div>
 							</div>
+						  </div>
 						)
 					})
 					:

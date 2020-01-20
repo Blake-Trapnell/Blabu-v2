@@ -1,45 +1,80 @@
-@import	 "../../styles/colors.scss";
-@import	 "../../styles/components.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/components.scss";
 
 .buckets--outer-container {
-	display: flex;
-	font-size: 10px;
-	width: 800px;
-	height: 100vh;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-content: flex-start;
+  display: flex;
+  font-size: 10px;
+  width: 800px;
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
 }
 
-.buckets--inner-container {
-	height: 300px;
-	width: 200px;
-	margin: 10px;
-	background-color: $diamond;
-	box-shadow: 6px 3px 16px 4px #192e4725;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
+.buckets--flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.buckets--flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.buckets--flip-card-inner-flipped {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
+	transform: rotateY(180deg)
+  }
+
+.buckets--flip-card-front,
+.buckets--flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
 }
 
-.buckets--goal-outer {
-	width: 180px;
-	height: 15px;
-	background-color: whitesmoke;
-	display: flex;
-	border-radius: 2px;
-	justify-content: space-between;
+.buckets--flip-card-front {
+  background-color: $diamond;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buckets--flip-card-back {
+  background: $deepSafron;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .buckets--goal-inner {
-	height: 15px;
-	background: linear-gradient(45deg, $deepSafron, $wildStrawberry);
-	border-radius: 2px;
+  position: relative;
+  height: 16px;
+  backface-visibility: hidden;
+  background: linear-gradient(45deg, $deepSafron, $wildStrawberry);
+  border-radius: 0 2px 2px 0;
+  top: 18px;
+  left: 2px;
 }
-
-.buckets--amount {
-	position: relative;
-	bottom: 10px;
+.buckets--goal-outer {
+  height: 16px;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 2px;
 }
