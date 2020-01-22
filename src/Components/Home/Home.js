@@ -1,7 +1,6 @@
 import React, { Component,} from "react";
 import axios from "axios"
 import { withRouter } from "react-router-dom";
-// import BucketController from "../BucketController/BucketController.js";
 import Buckets from "../BucketController/Buckets.js";
 import "./Home.scss";
 
@@ -35,7 +34,6 @@ class Home extends Component {
 					<div className="home--side-bar"></div>
 				</div>
 				<div className="home--account-info">
-					{/* <BucketController/> */}
 				</div>
 			</div>
 		)
