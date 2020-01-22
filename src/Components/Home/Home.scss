@@ -3,36 +3,20 @@
 
 .home--outer {
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	height: 100vh;
 	width: 100vw;
-}
-
-.home--content-container{
-	height: 90%;
-	width: 100%;
-	display: flex;
-	background: $wildStrawberry;
-}
-
-.home--account-info {
-	height: 10%;
-	width: 100%;
-	background: linear-gradient(45deg, $deepSafron, $wildStrawberry);
-}
-
-.home--content {
-	height: 100%;
-	width: 97%;
-	display: flex;
-	border-radius: 0 0 80px 0;
 	background: linear-gradient(45deg, $diamond, whitesmoke 90%);
 }
 
-.home--side-bar {
-	height: 100%;
-	width: 3%;
-	border: 10px;
-	background: linear-gradient(45deg, $wildStrawberry, $violet);
-
+.home--content-container {
+	z-index: 1;
+	height: 99%;
+	width: 98%;
+	border-radius: 10px;
+	background-image: url("https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
+

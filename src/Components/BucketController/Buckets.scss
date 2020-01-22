@@ -4,18 +4,17 @@
 .buckets--outer-container {
   display: flex;
   font-size: 10px;
-  width: 800px;
-  height: 100vh;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: flex-start;
 }
 
 .buckets--flip-card {
-  background-color: transparent;
-  width: 250px;
-  height: 300px;
-  perspective: 1000px;
+	margin: 40px;
+	background-color: transparent;
+	width: 250px;
+	height: 300px;
+	perspective: 1000px;
 }
 
 .buckets--flip-card-inner {
@@ -50,15 +49,16 @@
 }
 
 .buckets--flip-card-front {
-  background-color: $diamond;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  backdrop-filter: blur(40px);
 }
 
 .buckets--flip-card-back {
-  background: $deepSafron;
+  background: transparent;
   color: white;
   transform: rotateY(180deg);
 }
