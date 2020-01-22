@@ -58,7 +58,7 @@
 }
 
 .buckets--flip-card-back {
-  background: transparent;
+  background: linear-gradient(45deg, $diamond, whitesmoke);
   color: white;
   transform: rotateY(180deg);
 }
