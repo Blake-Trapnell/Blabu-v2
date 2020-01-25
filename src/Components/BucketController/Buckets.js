@@ -28,16 +28,6 @@ export default class Buckets extends Component {
 		const { buckets } = this.state
 		return (
 			<div className="buckets--outer-container">
-					<div className="buckets--flip-card">
-							<div className={this.state.controller ? "buckets--flip-card-inner-flipped" : "buckets--flip-card-inner"} >
-							  <div class="buckets--flip-card-front">
-								<BucketController/>
-							  </div>
-							  <div class="buckets--flip-card-back">
-							  <button className="btn--blue" onClick={() => {this.inputHandler("controller", !this.state.controller)}}>back</button>
-							  </div>
-							</div>
-						  </div>
 				{buckets ?
 					buckets.map((el, i) => {
 						let containerWidth = 200

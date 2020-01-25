@@ -2,6 +2,7 @@ import React, { Component,} from "react";
 import axios from "axios"
 import { withRouter } from "react-router-dom";
 import Buckets from "../BucketController/Buckets.js";
+import BucketsController from "../BucketController/BucketController.js";
 import "./Home.scss";
 
 class Home extends Component {
@@ -28,10 +29,16 @@ class Home extends Component {
 		return (
 			<div className="home--outer">
 				<div className="home--content-container">
+					<div className="home--side-bar">
+						<div className="home--flip-card">
+						<BucketsController/>
+						</div>
+						<div className="home--flip-card">
+						</div>
+					</div>
 					<div className="home--content">
 						<Buckets user_id={user_id} />
 					</div>
-					<div className="home--side-bar"></div>
 				</div>
 				<div className="home--account-info">
 				</div>
