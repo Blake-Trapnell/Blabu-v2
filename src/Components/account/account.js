@@ -5,7 +5,9 @@ import "./account.scss"
 function Account () {
 	return (
 		<div className="account--outer-container">
+			<div className="shrink">
             <h3>login</h3>
+			</div>
             <div className="account--account-image">
 				<h3>A</h3>
 			</div>
