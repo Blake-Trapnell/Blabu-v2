@@ -25,11 +25,11 @@ useEffect(()=> {
 			</div>
             <div className="login-form--body-form">
                 <div className="login-form--input-container one">
-                    <h3 className="login-form--h3-one">username</h3>
+                    <h3 id="green">username</h3>
                     <input className="login-form--input login-form--input-one" type="text"/>
                 </div>
                 <div className="login-form--input-container">
-                    <h3>password</h3>
+                    <h3 id="blue">password</h3>
                     <input className="login-form--input login-form--input-two" type="password"/>
                 </div>
                 <div className="login-form--input-container">

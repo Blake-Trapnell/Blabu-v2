@@ -1,9 +1,18 @@
 .header--outer-container {
 	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 	height: 5%;
 	width: 100%;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 200;
+}
+.header--left,
+.header--right {
+	height: 100%;
+	width: 20%;
+	background: rgba(75, 75, 75, .2);
+}
+
+.header--center {
+	height: 100%;
+	width:60%
 }
