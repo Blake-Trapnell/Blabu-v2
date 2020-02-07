@@ -1,7 +1,10 @@
 {
+	"editor.tabSize": 4,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": true,
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
-	 }
+	}
 }

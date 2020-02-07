@@ -1,9 +1,11 @@
 import React from "react";
-import "./Header.css";
+import Account from "../account/account.js"
+import "./Header.scss";
 
 function Header () {
 	return (
-		<div className="Header--Header-wrapper">	
+		<div className="header-outer-container">
+			<Account/>
 		</div>
 	);
 };
