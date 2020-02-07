@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import functions from "../../utils/functions.js";
 import Header from "../Header/Header.js";
 import LoginForm from "./Login-forms/Login-form.js";
+import CardExample from "../CardExample/CardExample.js";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import "./Login.scss"
@@ -23,7 +24,9 @@ class Login extends Component {
 			<div className="login--outer-container">
 				<Header/>
 			<div className="login--body">
-				<div className="login--body-left"></div>
+				<div className="login--body-left">
+					<CardExample/>
+				</div>
 				<div className="login--body-center">
 					<LoginForm/>
 				</div>

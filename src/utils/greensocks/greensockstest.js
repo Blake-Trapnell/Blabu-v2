@@ -2,7 +2,7 @@ import {TweenMax} from "gsap/all";
 
 
 let Greensocks = (one, two, three, four) => {
-        //one
+        // let tl = new TimelineMax({repeat: -1, repeatDelay: 20})
         TweenMax.to(one, 0, {opacity: 1})
         TweenMax.from(one, .2, {opacity: 0, delay: 4})
         TweenMax.to(one, .2, {opacity: 0, delay: 7})

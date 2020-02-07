@@ -9,7 +9,6 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.0",
-    "bcrypt": "^3.0.7",
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
@@ -29,6 +28,7 @@
     "sweetalert2": "^9.5.4"
   },
   "scripts": {
+    "run dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

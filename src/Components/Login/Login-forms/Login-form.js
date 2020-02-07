@@ -1,6 +1,5 @@
 import React, {useRef, useEffect} from "react";
-import {TweenMax, TimelineMax} from "gsap/all";
-import Greensocks from "../../../utils/greensocks/greensockstest.js"
+import Greensocks from "../../../utils/greensocks/greensockstest.js";
 
 import "./form.scss";
 
