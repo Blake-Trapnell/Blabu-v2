@@ -1,1 +1,24 @@
+$deepSafron: #FFAA32;
 
+.account--outer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 200px;
+    color: $deepSafron;
+    font-size: 14px;
+}
+
+.account--account-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: $deepSafron;
+    border: 2px solid whitesmoke;
+    // margin-left: 20px;
+    color: whitesmoke;
+}

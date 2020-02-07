@@ -1,0 +1,14 @@
+.hamburger--outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30px;
+    width: 30px;
+}
+
+.line {
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background: whitesmoke;
+}

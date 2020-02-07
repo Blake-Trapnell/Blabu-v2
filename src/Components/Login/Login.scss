@@ -1,15 +1,40 @@
-$fontFamily: "Oswald", sans-serif;
+
 $baseFontSize: 16px;
 $largeHeaderFontSize: 30px;
 $baseColor: whitesmoke;
 $smallFontSize: 12px;
-$extraSmallFontSize: 10px;
+$extraSmallFontSize: 8px;
+$deepSafron: #FFAA32;
+
+h1 {
+  font-size: 80px;
+  color: $deepSafron
+}
+h2 {
+  font-size: 40px;
+}
 
 .login--outer-container {
   background: #404040;
   height: 100vh;
   width: 100vw;
-
   color: $baseColor;
-  font-size: $extraSmallFontSize;
+}
+
+.login--body {
+  display: flex;
+  height: 95%;
+  width: 100%;
+}
+.login--body-center {
+  height: 100%;
+  width: 60%;
+}
+
+.login--body-left,
+.login--body-right {
+  height: 100%;
+  width: 20%;
+  background: #4b4b4b;
+  opacity: .2;
 }

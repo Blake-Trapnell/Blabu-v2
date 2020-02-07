@@ -1,10 +1,15 @@
 import React from "react";
+import Hamburger from "../../utils/hamburger/hamburger.js";
+import "./account.scss"
 
 function Account () {
 	return (
 		<div className="account--outer-container">
-            <h1>login</h1>
-            <div className="account--account-image"></div>
+            <h3>login</h3>
+            <div className="account--account-image">
+				<h3>A</h3>
+			</div>
+			<Hamburger/>
 		</div>
 	);
 };
