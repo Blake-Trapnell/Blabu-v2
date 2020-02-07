@@ -1,5 +1,5 @@
 import {TweenMax} from "gsap/all";
-import { Tween } from "gsap/gsap-core";
+
 
 let Greensocks = (one, two, three, four) => {
         //one
@@ -9,7 +9,7 @@ let Greensocks = (one, two, three, four) => {
         TweenMax.to(one, .2, {opacity: 1, delay: 10.2})
         //two
         TweenMax.to(two, 0, {opacity: 1})
-        TweenMax.from(two, 1, {x: 300})
+        TweenMax.from(two, .2, {y: 300,})
         TweenMax.to(two, 1,{x: 50})
         TweenMax.from(two, 1, {opacity: 0, delay: .2})
         TweenMax.to(two, 2,{color: "#FFAA32"})

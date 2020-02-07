@@ -28,7 +28,7 @@ useEffect(()=> {
                     <h3 id="green">username</h3>
                     <input className="login-form--input login-form--input-one" type="text"/>
                 </div>
-                <div className="login-form--input-container">
+                <div className="login-form--input-container two">
                     <h3 id="blue">password</h3>
                     <input className="login-form--input login-form--input-two" type="password"/>
                 </div>

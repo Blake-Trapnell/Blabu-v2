@@ -25,6 +25,7 @@ h2 {
   display: flex;
   height: 95%;
   width: 100%;
+  justify-content: center;
 }
 .login--body-center {
   height: 100%;
@@ -37,4 +38,14 @@ h2 {
   width: 20%;
   background: #4b4b4b;
   opacity: .2;
+}
+
+@media (max-width: 768px) {
+  .login--body-left,
+  .login--body-right {
+    display: none;
+  }
+  .login--body-center {
+    width: 100%
+  }
 }
