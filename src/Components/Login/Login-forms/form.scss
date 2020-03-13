@@ -46,27 +46,49 @@
     font-size: 18px;
     color: whitesmoke
 }
-.login-form--input-one:focus {
-        border: 1px solid#0CF574;
+.login-form--input-green:focus {
+        border: 1px solid #0CF574;
         color: #0CF574;
 }
 
-.one:hover {
+.green:hover {
     color: #0CF574;
-    .login-form--input-one {
-        border: 1px solid#0CF574;
+    .login-form--input-green {
+        border: 1px solid #0CF574;
     }
 }
 
-.two:hover {
+.blue:hover {
     color: #1CCAD8;
-    .login-form--input-two {
-        border: 1px solid#1CCAD8;
+    .login-form--input-blue {
+        border: 1px solid #1CCAD8;
     }
 }
+.login-form--input-purple:focus {
+    border: 1px solid #CA0CF4;
+    color: #CA0CF4;
+}
 
-.login-form--input-two:focus {
-    border: 1px solid#1CCAD8;
+.purple:hover {
+color: #CA0CF4;
+.login-form--input-purple {
+    border: 1px solid #CA0CF4;
+}
+}
+.login-form--input-yellow:focus {
+    border: 1px solid #F4D50C;
+    color: #F4D50C;
+}
+
+.yellow:hover {
+color: #F4D50C;
+.login-form--input-yellow {
+    border: 1px solid #F4D50C;
+}
+}
+
+.login-form--input-blue:focus {
+    border: 1px solid #1CCAD8;
     color: #1CCAD8;
 }
 
