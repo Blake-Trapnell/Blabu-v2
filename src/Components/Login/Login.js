@@ -15,11 +15,14 @@ class Login extends Component {
 			password: "",
 			email: "",
 			username: "",
+			showRegister: false,
 		}
 	this.inputHandler = functions.inputHandler.bind(this)
+	this.switchHandler = functions.switchHandler.bind(this)
 	}
 
 	render() {
+		let showRegister = this.state.showRegister;
 		return (
 			<div className="login--outer-container">
 				<Header/>
@@ -28,7 +31,9 @@ class Login extends Component {
 					<LoginAnimation/>
 				</div>
 				<div className="login--body-center">
-					<LoginForm/>
+					{showRegister ? <div>Register</div> : 
+					<LoginForm switchHandler={()=> this.switchHandler("showRegister", showRegister)}/>
+					}
 				</div>
 				<div className="login--body-right">
 					<LoginAnimation/>
