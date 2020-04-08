@@ -18,8 +18,8 @@ module.exports = {
 		})
 	},
 	login: async (req, res) => {
+		console.log("hello")
 		const db = req.app.get('db')
-		console.log(db.auth)
 		const { username, password } = req.body
 		const user = await db.auth.find_user([username])
 		if (user.length === 0) {

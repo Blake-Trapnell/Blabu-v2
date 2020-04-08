@@ -1,19 +1,19 @@
 @import "./colors.scss";
 @import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption&display=swap');
 
-$btnFontSize: 13px;
-$buttonHeight: 30px;
-$buttonWidth: 70px;
-$fontFamily: 'PT Serif Caption', serif;
+$btnFontSize: 1.1em;
+$buttonHeight: 35px;
+$buttonWidth: 80px;
+$fontFamily: "Oswald", sans-serif;
 
 .btn--blue {
 	background: linear-gradient(45deg, $deepSafron, rgb(255, 207, 50));
 	border: 0;
 	margin: 10px;
 	border-radius: 4px;
-	box-shadow: 2px 3px 5px 1px #58729170;
-	color: whitesmoke;
+	color: #404040;
 	font-family: $fontFamily;
+	font-weight: bold;
 	font-size: $btnFontSize;
 	height: $buttonHeight;
 	outline: none;
@@ -22,8 +22,6 @@ $fontFamily: 'PT Serif Caption', serif;
 
 	&:hover {
 		background: linear-gradient(45deg, $brightCerulean, $brightTurqoise);
-		box-shadow: 3px 4px 3px 1px #58729134;
-		transform: translateY(-1px) scale(1.03);
 	}
 }
 

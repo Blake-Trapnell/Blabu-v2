@@ -7,49 +7,67 @@ import LoginAnimation from "../LoginAnimation/LoginAnimation.js";
 import BlabuTitle from "./BlabuTitle.js";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import "./Login.scss"
+import "./Login.scss";
 
 class Login extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			signin: true,
 			password: "",
 			email: "",
 			username: "",
 			showRegister: false,
-		}
-	this.inputHandler = functions.inputHandler.bind(this)
-	this.switchHandler = functions.switchHandler.bind(this)
+		};
+		this.inputHandler = functions.inputHandler.bind(this);
+		this.switchHandler = functions.switchHandler.bind(this);
+		this.login = functions.login.bind(this);
 	}
 
 	render() {
 		let showRegister = this.state.showRegister;
+		const {username, password} = this.state
 		return (
 			<div className="login--outer-container">
-				<Header/>
-			<div className="login--body">
-				<div className="login--body-left">
-					<LoginAnimation/>
-				</div>
-				<div className="login--body-center">
-				<div className="login-form--outer-container">
-					<BlabuTitle/>
-					{showRegister ? 
-					<RegisterForm switchHandler={()=> this.switchHandler("showRegister", showRegister)}/> 
-					: 
-					<LoginForm switchHandler={()=> this.switchHandler("showRegister", showRegister)}/>
-					}
-				</div>
-				</div>
-				<div className="login--body-right">
-					<LoginAnimation/>
+				<Header />
+				<div className="login--body">
+					<div className="login--body-left">
+						<LoginAnimation />
+					</div>
+					<div className="login--body-center">
+						<div className="login-form--outer-container">
+							<BlabuTitle />
+							{showRegister ? (
+								<RegisterForm
+									switchHandler={() =>
+										this.switchHandler(
+											"showRegister",
+											showRegister
+										)
+									}
+									inputHandler={this.inputHandler}
+								/>
+							) : (
+								<LoginForm
+									switchHandler={() =>
+										this.switchHandler(
+											"showRegister",
+											showRegister
+										)
+									}
+									inputHandler={this.inputHandler}
+									login={()=>this.login(username, password)}
+								/>
+							)}
+						</div>
+					</div>
+					<div className="login--body-right">
+						<LoginAnimation />
+					</div>
 				</div>
 			</div>
-			</div>
-		)
+		);
 	}
-
 }
 
-export default withRouter(connect(null)(Login))
+export default withRouter(connect(null)(Login));
