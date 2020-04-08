@@ -1,11 +1,12 @@
 {
 	"editor.tabSize": 4,
-	"editor.insertSpaces": false,
 	"editor.detectIndentation": true,
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
 	},
-	"editor.renderWhitespace": "all"
+	"editor.renderWhitespace": "all",
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
 }
