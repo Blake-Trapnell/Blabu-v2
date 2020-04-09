@@ -18,12 +18,11 @@ module.exports = {
 		})
 	},
 	login: async (req, res) => {
-		console.log("hello")
 		const db = req.app.get('db')
 		const { username, password } = req.body
 		const user = await db.auth.find_user([username])
 		if (user.length === 0) {
-			return res.status(200).send({ message: 'Username not found' })
+			return res.status(200).send({ message: 'User not found' })
 		}
 		const result = bcrypt.compareSync(password, user[0].hash)
 		if (result) {
@@ -32,7 +31,7 @@ module.exports = {
 			return res.status(200).send({ message: 'Logged in', user: req.session.user, loggedIn: true })
 		}
 		else {
-			return res.status(200).send({ message: 'wrong' })
+			return res.status(200).send({ message: 'username and or password is incorrect' })
 		}
 	},
 	setUser: async (req, res) => {
