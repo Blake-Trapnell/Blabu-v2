@@ -45,7 +45,9 @@ const RegisterForm = (props) => {
 				/>
 			</div>
 			<div className="login--form-button-container">
-				<button className="btn--blue">Register</button>
+				<button 
+				className="btn--blue"
+				onClick={()=>{props.registerMe()}}>Register</button>
 			</div>
 			<div className="login-form--input-container">
 				<h6

@@ -25,7 +25,7 @@ const LoginForm = (props) => {
 				/>
 			</div>
 			<div className="login--form-button-container">
-				<button className="btn--blue" onClick={props.login}>
+				<button className="btn--blue" onClick={props.logMeIn}>
 					Login
 				</button>
 			</div>

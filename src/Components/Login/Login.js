@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LoginFunctions from "../../utils/loginFunctions.js";
 import functions from "../../utils/functions.js";
 import Header from "../Header/Header.js";
 import LoginForm from "./Login-forms/Login-form.js";
@@ -21,12 +22,14 @@ class Login extends Component {
 		};
 		this.inputHandler = functions.inputHandler.bind(this);
 		this.switchHandler = functions.switchHandler.bind(this);
-		this.login = functions.login.bind(this);
+		this.logMeIn = LoginFunctions.logMeIn.bind(this);
+		this.registerMe = LoginFunctions.registerMe.bind(this);
 	}
 
 	render() {
 		let showRegister = this.state.showRegister;
-		const {username, password} = this.state
+		const { username, password, passwordConfirm, email } = this.state;
+		const registerInfo = { username, password, passwordConfirm, email };
 		return (
 			<div className="login--outer-container">
 				<Header />
@@ -39,6 +42,9 @@ class Login extends Component {
 							<BlabuTitle />
 							{showRegister ? (
 								<RegisterForm
+									registerMe={() =>
+										this.registerMe(registerInfo, this.props)
+									}
 									switchHandler={() =>
 										this.switchHandler(
 											"showRegister",
@@ -56,7 +62,7 @@ class Login extends Component {
 										)
 									}
 									inputHandler={this.inputHandler}
-									login={()=>this.login(username, password)}
+									login={() => this.login(username, password)}
 								/>
 							)}
 						</div>

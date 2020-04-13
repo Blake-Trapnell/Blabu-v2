@@ -2,43 +2,40 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import {withRouter} from "react-router-dom"
 
-async function logmein(userinfo, props) {
-	const Toast = Swal.mixin({
-		toast: true,
+export async function logMeIn(username, password) {
+	let toast = Swal.mixin( {
 		position: 'top-end',
-		showConfirmButton: false,
+		width: '20rem',
+		height: '5rem',
 		timer: 3000,
-	})
-	const { username, password } = userinfo
-	let user = await axios.post('/auth/users/login', { username, password });
-	switch (user.data.message) {
+	}
+	)
+	const response = await axios.post("/auth/users/login", {
+		username,
+		password,
+	});
+	switch(response.data.message) {
+		case "username and or password is incorrect": 
+		toast.fire({
+			icon: 'info',
+			text: response.data.message,
+		});
+		break;
+		case "User not found": 
+		toast.fire({
+			icon: 'info',
+			text: response.data.message,
+		})
+		break;
 		case "Logged in":
-			Toast.fire({
-				type: "success",
-				title: `${username} signed in`
-			}
-			)
-			props.history.push('/home')
-			break;
-		case "Username not found":
-			Toast.fire({
-				type: "error",
-				title: 'Username not found'
+			toast.fire({
+				icon: 'success',
+				text: response.data.message,
 			})
-			break;
-		case "wrong":
-			Toast.fire({
-				type: "error",
-				title: 'Wrong username & or password'
-			})
-			break;
-		default:
-			Toast.fire({
-				type: "error",
-				title: 'Internal error'
-			});
-	};
-}
+		this.props.history.push("/home")
+	}
+};
+
 async function registerMe(registerInfo, props) {
 	const Toast = Swal.mixin({
 		toast: true,
@@ -82,6 +79,6 @@ async function registerMe(registerInfo, props) {
 }
 
 export default withRouter({
-	logmein,
+	logMeIn,
 	registerMe,
 })
