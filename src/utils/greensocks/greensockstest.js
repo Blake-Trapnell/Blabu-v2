@@ -1,4 +1,4 @@
-import {TweenMax,TimelineMax} from "gsap/all";
+import {TimelineMax} from "gsap/all";
 
 
 let Greensocks = ( one, two, three) => {

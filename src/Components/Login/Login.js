@@ -62,7 +62,7 @@ class Login extends Component {
 										)
 									}
 									inputHandler={this.inputHandler}
-									login={() => this.login(username, password)}
+									logMeIn={() => this.logMeIn(username, password)}
 								/>
 							)}
 						</div>

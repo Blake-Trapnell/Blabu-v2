@@ -10,6 +10,7 @@ export async function logMeIn(username, password) {
 		timer: 3000,
 	}
 	)
+	console.log('hit')
 	const response = await axios.post("/auth/users/login", {
 		username,
 		password,
@@ -28,11 +29,14 @@ export async function logMeIn(username, password) {
 		})
 		break;
 		case "Logged in":
+			console.log('hit')
 			toast.fire({
 				icon: 'success',
 				text: response.data.message,
 			})
 		this.props.history.push("/home")
+		break;
+		default: toast.fire({icon: 'error', text: "an unexpected error occured"})
 	}
 };
 

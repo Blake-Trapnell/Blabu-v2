@@ -2,6 +2,7 @@ import React from "react";
 import "./form.scss";
 
 const LoginForm = (props) => {
+	console.log("logmein", props.logMeIn)
 	return (
 		<div className="login-form--body-form">
 			<div className="login-form--input-container green">

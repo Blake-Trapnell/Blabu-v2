@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect} from "react";
 import {TweenMax, Power0} from "gsap/all"
 import "./LoginAnimation.scss";
 
@@ -29,7 +29,7 @@ let LoginAnmation = () => {
     return (
         <div className = "card-example">
                {array.map((el,i) => (
-            <div className={`effect ${i}`}>
+            <div key={i} className={`effect ${i}`}>
             </div>
                )
                )}    
