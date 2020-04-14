@@ -1,9 +1,8 @@
 import React, { Component,} from "react";
 import axios from "axios"
 import { withRouter } from "react-router-dom";
-import Buckets from "../BucketController/Buckets.js";
-import BucketsController from "../BucketController/BucketController.js";
 import "./Home.scss";
+import Account from "../account/account";
 
 class Home extends Component {
 	constructor(props) {
@@ -25,9 +24,12 @@ class Home extends Component {
 	}
 
 	render() {
-		const { user_id } = this.state
 		return (
 			<div className="home--outer">
+				<div className="home--nav-bar">
+					<Account/>
+				</div>
+				<div className="home--budget-manager"></div>
 			</div>
 		)
 	}

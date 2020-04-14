@@ -6,8 +6,9 @@ export async function logMeIn(username, password) {
 	let toast = Swal.mixin( {
 		position: 'top-end',
 		width: '20rem',
-		height: '5rem',
 		timer: 3000,
+		background: "#404040",
+		showConfirmButton: false,
 	}
 	)
 	const response = await axios.post("/auth/users/login", {

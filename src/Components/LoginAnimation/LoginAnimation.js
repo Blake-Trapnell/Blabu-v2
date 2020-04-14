@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {TweenMax, Power0} from "gsap/all"
+import {TweenMax, TimelineLite, Power0} from "gsap/all"
 import "./LoginAnimation.scss";
 
 
@@ -11,8 +11,12 @@ let LoginAnmation = () => {
         )
     }
     let greensocks = () => {
-
+        let tl = new TimelineLite
+        let tl2 = new TimelineLite
         for(let i = 0; i < 105; i++) {
+            tl.to(document.getElementsByClassName(i), .01, {ease: Power0.easeNone, border: "solid 1px #FFAA32"})
+            tl.to(document.getElementsByClassName(i), .01, {ease: Power0.easeNone, border: "solid 1px #0CF574", delay: .02, repeat: -1})
+            tl.to(document.getElementsByClassName(i), .01, {ease: Power0.easeNone, border: "solid 1px #1CCAD8", delay: .04, repeat: -1})
             if(i % 2 === 0 ) {
                 TweenMax.to(document.getElementsByClassName(i), 2, {ease: Power0.easeNone, rotate: 180}).repeat(-1)
             }
