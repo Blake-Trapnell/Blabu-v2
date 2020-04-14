@@ -2,7 +2,7 @@ import React from "react";
 import "./form.scss";
 
 const LoginForm = (props) => {
-	console.log("logmein", props.logMeIn)
+
 	return (
 		<div className="login-form--body-form">
 			<div className="login-form--input-container green">
@@ -18,8 +18,13 @@ const LoginForm = (props) => {
 			<div className="login-form--input-container blue">
 				<h3 id="blue">password</h3>
 				<input
-					className="login-form--input login-form--input-blue"
+					className="login-form--input login-form--input-blue password"
 					type="password"
+					onKeyDown = {(e)=>{
+						if(e.keyCode === 13) {
+							return	props.logMeIn()
+						}
+					}}
 					onChange={(e) => {
 						props.inputHandler("password", e.target.value);
 					}}

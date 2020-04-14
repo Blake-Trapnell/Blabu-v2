@@ -7,18 +7,14 @@
 	align-items: center;
 	height: 100vh;
 	width: 100vw;
-	background: linear-gradient(45deg, $diamond, whitesmoke 90%);
+	background-color: $darkGrey;
 }
 
 .home--content-container {
 	display: flex;
-	z-index: 1;
 	height: 99%;
 	width: 98%;
 	border-radius: 10px;
-	background-image: url("https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 .home--flip-card {

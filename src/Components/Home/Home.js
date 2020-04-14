@@ -28,20 +28,6 @@ class Home extends Component {
 		const { user_id } = this.state
 		return (
 			<div className="home--outer">
-				<div className="home--content-container">
-					<div className="home--side-bar">
-						<div className="home--flip-card">
-						<BucketsController/>
-						</div>
-						<div className="home--flip-card">
-						</div>
-					</div>
-					<div className="home--content">
-						<Buckets user_id={user_id} />
-					</div>
-				</div>
-				<div className="home--account-info">
-				</div>
 			</div>
 		)
 	}
