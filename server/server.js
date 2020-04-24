@@ -26,10 +26,8 @@ app.post("/auth/users/register", authCtrl.register);
 app.get("/auth/user", authCtrl.setUser);
 
 //Account
-app.post("/user/buckets", accCtrl.getBuckets);
-app.get("/user/buckets", accCtrl.getBuckets);
-app.post("/user/add/bucket", accCtrl.addBucket);
-app.put("/api/remove/bucket", accCtrl.removeBucket);
+app.get("/user/balance", accCtrl.currentBalance);
+app.post('/user/add-balance', accCtrl.addBalance);
 
 massive(CONNECTION_STRING)
 	.then((db) => {

@@ -2,7 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import {withRouter} from "react-router-dom"
 
-export async function logMeIn(username, password) {
+ async function logMeIn(username, password) {
 	let toast = Swal.mixin( {
 		position: 'top-end',
 		width: '20rem',
@@ -81,7 +81,21 @@ async function registerMe(registerInfo, props) {
    
 }
 
+async function checkUserExists() {
+	await axios.get('/auth/user').then(async (res) => {
+		const { username, user_id } = res.data
+		if (username === undefined) {
+			return this.props.history.push("/")
+		}
+		this.setState({
+			username,
+			user_id
+		})
+	})
+}
+
 export default withRouter({
 	logMeIn,
 	registerMe,
+	checkUserExists,
 })

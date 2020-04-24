@@ -10,6 +10,8 @@ module.exports = {
 		const salt = bcrypt.genSaltSync(10)
 		const hash = bcrypt.hashSync(password, salt)
 		const newUser = await db.auth.Register_user([username, email, hash])
+		console.log(newUser[0].user_id)
+		db.accounts.create_account_balance([newUser[0].user_id, 0, " "])
 		req.session.user = newUser[0]
 		res.status(200).send({
 			message: 'logged in',
