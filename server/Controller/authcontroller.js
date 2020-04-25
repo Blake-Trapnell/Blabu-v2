@@ -1,18 +1,16 @@
-const bcrypt = require('bcrypt-nodejs')
+const bcrypt = require('bcrypt-nodejs');
+let authFunctions = require("../serverUtils/authControllerUtils.js");
+
 module.exports = {
 	register: async (req, res) => {
 		const db = req.app.get('db')
 		const { username, password, email } = req.body
-		const user = await db.auth.check_if_username_is_taken([username, email])
-		if (user.length > 0) {
-			return res.status(200).send({ message: 'username & or email is in use' })
+		if(authFunctions.checkIfUsernameIsTaken(username, email) === true) {
+			return res
+			.status(200)
+			.send({ message: "username & or email is in use" });
 		}
-		const salt = bcrypt.genSaltSync(10)
-		const hash = bcrypt.hashSync(password, salt)
-		const newUser = await db.auth.Register_user([username, email, hash])
-		console.log(newUser[0].user_id)
-		db.accounts.create_account_balance([newUser[0].user_id, 0, " "])
-		req.session.user = newUser[0]
+		req.session.user = authFunctions.registerNewUser(username, password, email)
 		res.status(200).send({
 			message: 'logged in',
 			user: req.session.user,

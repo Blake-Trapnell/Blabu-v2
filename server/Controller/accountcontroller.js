@@ -5,11 +5,11 @@ module.exports = {
 		let balance = await db.accounts.get_account_balance([user_id])
 		res.status(200).send(balance)
 	},
-	addBalance: async (req,res) => {
+	updateBalance: async (req,res) => {
 		const db = req.app.get('db')
-		const {user_id, currentFunds, time_stamp} = req.body
+		const {user_id, updatedFunds, time_stamp} = req.body
 		console.log(currentFunds)
-		let balance = await db.accounts.update_account_balance([user_id, currentFunds, time_stamp])
+		let balance = await db.accounts.update_account_balance([user_id, updatedFunds, time_stamp])
 		res.status(200).send(balance)
 	}
 }

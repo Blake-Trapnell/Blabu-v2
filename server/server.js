@@ -27,7 +27,7 @@ app.get("/auth/user", authCtrl.setUser);
 
 //Account
 app.get("/user/balance", accCtrl.currentBalance);
-app.post('/user/add-balance', accCtrl.addBalance);
+app.post('/user/update-balance', accCtrl.updateBalance);
 
 massive(CONNECTION_STRING)
 	.then((db) => {
