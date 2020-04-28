@@ -1,5 +1,7 @@
+const bcrypt = require("bcrypt-nodejs");
+
 module.exports = {
-	checkIfUsernameIsTaken: async (username, email) => {
+	checkIfUsernameIsTaken: async (username, email, db) => {
 		const user = await db.auth.check_if_username_is_taken([
 			username,
 			email,
@@ -8,7 +10,7 @@ module.exports = {
 			return true;
 		}
 	},
-	registerNewUser: async (username, password, email) => {
+	registerNewUser: async (username, password, email, db) => {
 		const salt = bcrypt.genSaltSync(10);
 		const hash = bcrypt.hashSync(password, salt);
 		const newUser = await db.auth.Register_user([username, email, hash]);

@@ -5,12 +5,13 @@ module.exports = {
 	register: async (req, res) => {
 		const db = req.app.get('db')
 		const { username, password, email } = req.body
-		if(authFunctions.checkIfUsernameIsTaken(username, email) === true) {
+		let isAlreadyUser = await authFunctions.checkIfUsernameIsTaken(username, email, db)
+		if( isAlreadyUser === true) {
 			return res
 			.status(200)
 			.send({ message: "username & or email is in use" });
 		}
-		req.session.user = authFunctions.registerNewUser(username, password, email)
+		req.session.user = authFunctions.registerNewUser(username, password, email, db)
 		res.status(200).send({
 			message: 'logged in',
 			user: req.session.user,

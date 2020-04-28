@@ -66,6 +66,7 @@ async function registerMe(registerInfo, props) {
 		})
 	}
    const user = await axios.post('auth/users/register', {username, password, email})
+   console.log(user.data.message)
    if(user.data.message === "logged in") {
 	 Toast.fire({
 		type: "success",
@@ -84,6 +85,7 @@ async function registerMe(registerInfo, props) {
 async function checkUserExists() {
 	await axios.get('/auth/user').then(async (res) => {
 		const { username, user_id } = res.data
+		console.log(username)
 		if (username === undefined) {
 			return this.props.history.push("/")
 		}
