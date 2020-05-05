@@ -4,7 +4,6 @@ import functions from "./functions";
 async function AdjustFunds(difference, user_id) {
 	const time_stamp = functions.getTodayAndCurrentTime();
 	let currentFunds = await getCurrentFunds(user_id);
-	console.log(currentFunds, difference);
 	const updatedFunds = AddFunds(currentFunds, difference);
 	axios.post("/user/update-balance", {
 		user_id,
@@ -26,4 +25,5 @@ const AddFunds = (currentFunds, difference) => {
 
 export default {
 	AdjustFunds,
+	getCurrentFunds,
 };

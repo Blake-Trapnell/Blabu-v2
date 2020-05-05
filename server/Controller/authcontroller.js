@@ -11,12 +11,14 @@ module.exports = {
 			.status(200)
 			.send({ message: "username & or email is in use" });
 		}
-		req.session.user = authFunctions.registerNewUser(username, password, email, db)
+		req.session.user = await authFunctions.registerNewUser(username, password, email, db)
+		console.log(req.session.user)
 		res.status(200).send({
 			message: 'logged in',
 			user: req.session.user,
 			loggedIn: true
 		})
+
 	},
 	login: async (req, res) => {
 		const db = req.app.get('db')

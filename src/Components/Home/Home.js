@@ -17,18 +17,18 @@ class Home extends Component {
 	 this.AdjustFunds = accountFunctions.AdjustFunds.bind(this)
 	}
 	async componentDidMount() {
-		this.checkUserExists()
+		await this.checkUserExists()
 	}
 
 	render() {
-		console.log(this.state)
+		console.log("accountBalance", this.state.accountBalance)
 		return (
 			<div className="home--outer">
 				<div className="home--nav-bar">
 					<Account/>
 				</div>
 				<div className="home--budget-manager">
-					{this.state.accountBalance ? <h1>{this.state.accountBalance}</h1> : null}
+					{this.state.accountBalance ? <h1>{this.state.accountBalance}</h1> : console.log("hit")}
 					<input onChange = {(e)=>this.inputHandler("difference", e.target.value)} ></input>
 					<button onClick={()=>this.AdjustFunds(this.state.difference, this.state.user_id)}></button>
 				</div>
