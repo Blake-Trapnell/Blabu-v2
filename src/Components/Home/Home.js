@@ -21,14 +21,14 @@ class Home extends Component {
 	}
 
 	render() {
-		console.log("accountBalance", this.state.accountBalance)
+	const {accountBalance, username} = this.state
 		return (
 			<div className="home--outer">
 				<div className="home--nav-bar">
-					<Account/>
+					<Account accountBalance={accountBalance} username={username} />
 				</div>
 				<div className="home--budget-manager">
-					{this.state.accountBalance ? <h1>{this.state.accountBalance}</h1> : console.log("hit")}
+					{this.state.accountBalance ? <h6>{this.state.accountBalance}</h6> : <h6>loading</h6>}
 					<input onChange = {(e)=>this.inputHandler("difference", e.target.value)} ></input>
 					<button onClick={()=>this.AdjustFunds(this.state.difference, this.state.user_id)}></button>
 				</div>

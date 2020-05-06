@@ -1,5 +1,4 @@
 import React from "react";
-import Account from "../account/account.js"
 import "./Header.scss";
 
 function Header () {
@@ -8,7 +7,6 @@ function Header () {
 			<div className="header--left"></div>
 			<div className="header--center"></div>
 			<div className="header--right">
-			<Account/>
 			</div>
 
 		</div>

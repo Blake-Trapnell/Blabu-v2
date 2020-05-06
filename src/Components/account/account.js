@@ -1,18 +1,18 @@
 import React from "react";
-import Hamburger from "../../utils/hamburger/hamburger.js";
 import "./account.scss"
 
-function Account () {
+function Account (props) {
+	const {accountBalance, username} = props
 	return (
-		<div className="account--outer-container">
-			<div className="shrink">
-            <h3>login</h3>
+		<div>
+			{username  && accountBalance ? 
+			<div>
+			<h6>{username}</h6>
+			<h6>{accountBalance}</h6>
 			</div>
-            <div className="account--account-image">
-				<h3>A</h3>
-			</div>
-			<Hamburger/>
+			 : <h6>loading</h6>}
 		</div>
+
 	);
 };
 
