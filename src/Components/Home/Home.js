@@ -4,7 +4,6 @@ import accountFunctions from "../../utils/accountFunctions.js";
 import functions from "../../utils/functions.js";
 import { withRouter } from "react-router-dom";
 import "./Home.scss";
-import Account from "../account/account";
 
 
 class Home extends Component {
@@ -21,16 +20,15 @@ class Home extends Component {
 	}
 
 	render() {
-	const {accountBalance, username} = this.state
+	const {accountBalance, username, difference, user_id} = this.state
 		return (
 			<div className="home--outer">
-				<div className="home--nav-bar">
-					<Account accountBalance={accountBalance} username={username} />
-				</div>
 				<div className="home--budget-manager">
-					{this.state.accountBalance ? <h6>{this.state.accountBalance}</h6> : <h6>loading</h6>}
+					{accountBalance ? <h6>{accountBalance}</h6> : <h6>loading...</h6>}
+					{username ? <h6>{username}</h6> : <h6>loading...</h6>}
 					<input onChange = {(e)=>this.inputHandler("difference", e.target.value)} ></input>
-					<button onClick={()=>this.AdjustFunds(this.state.difference, this.state.user_id)}></button>
+					<button onClick={()=>this.AdjustFunds(difference, user_id, "deposit")} className="btn--blue">Deposit</button>
+					<button onClick={()=>this.AdjustFunds(difference, user_id, "withdraw")}>Withdraw</button>
 				</div>
 			</div>
 		)
