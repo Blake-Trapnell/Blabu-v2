@@ -1,6 +1,7 @@
 import React, { Component,} from "react";
 import loginFunctions from "../../utils/loginFunctions.js";
 import accountFunctions from "../../utils/accountFunctions.js";
+import BucketCreator from "../BucketManager/BucketCreator.js";
 import functions from "../../utils/functions.js";
 import { withRouter } from "react-router-dom";
 import "./Home.scss";
@@ -29,6 +30,9 @@ class Home extends Component {
 					<input onChange = {(e)=>this.inputHandler("difference", e.target.value)} ></input>
 					<button onClick={()=>this.AdjustFunds(difference, user_id, "deposit")} className="btn--blue">Deposit</button>
 					<button onClick={()=>this.AdjustFunds(difference, user_id, "withdraw")}>Withdraw</button>
+				</div>
+				<div className="home--budget-manager">
+					<BucketCreator/>
 				</div>
 			</div>
 		)
