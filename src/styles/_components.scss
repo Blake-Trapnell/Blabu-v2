@@ -6,6 +6,27 @@ $buttonHeight: 35px;
 $buttonWidth: 80px;
 $fontFamily: "Oswald", sans-serif;
 
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
 .btn--blue {
 	background: linear-gradient(45deg, $deepSafron, rgb(255, 207, 50));
 	border: 0;
@@ -24,6 +45,50 @@ $fontFamily: "Oswald", sans-serif;
 		background: linear-gradient(45deg, $brightCerulean, $brightTurqoise);
 	}
 }
+.btn--orange {
+	background: linear-gradient(45deg, $brightCerulean, $brightTurqoise);
+	border: 0;
+	margin: 10px;
+	border-radius: 4px;
+	color: #404040;
+	font-family: $fontFamily;
+	font-weight: bold;
+	font-size: $btnFontSize;
+	height: $buttonHeight;
+	outline: none;
+	transition: 0.2s;
+	width: $buttonWidth;
+
+	&:hover {
+		background: linear-gradient(45deg, $deepSafron, rgb(255, 207, 50));
+	}
+}
+
+.btn--green {
+	background: linear-gradient(124deg, $springGreen, $brightTurqoise);
+	background-size: 900% 900%;
+	position: absolute;
+	border: 0;
+	margin: 10px;
+	border-radius: 4px;
+	color: #404040;
+	font-family: $fontFamily;
+	font-weight: bold;
+	font-size: $btnFontSize;
+	height: $buttonHeight;
+	outline: none;
+	width: $buttonWidth;
+	-webkit-animation: rainbow 4s ease infinite;
+	-z-animation: rainbow 4s ease infinite;
+	-o-animation: rainbow 4s ease infinite;
+	animation: rainbow 4s ease infinite;
+
+		&:hover {
+			background: linear-gradient(124deg, $diamond, $brightCerulean);
+			background-size: 900%, 900%;
+	}
+}
+
 
 .h1--blue--gradient-text {
 	margin: 10px;

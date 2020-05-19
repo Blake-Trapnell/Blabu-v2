@@ -1,41 +1,92 @@
 @import "../../styles/colors.scss";
+@import "../../styles/components.scss";
 
 .bucket-creator--outer-container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 200px;
 	height: 300px;
+}
+
+.bucket-creator--card-container {
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	transform-style: preserve-3d;
+	transition: all 0.5s ease;
+	color: $darkGrey;
+}
+
+.true {
+	transform: rotatey(180deg);
+	height: 100%;
+}
+
+.bucket-creator--card-front {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+	background: $darkGrey;
 	border: 2px solid $brightCerulean;
 	border-radius: 10px;
-	background-color: $darkGrey;
+	color: $brightCerulean;
+	justify-content: space-around;
+	align-items: center;
+	cursor: pointer;
+}
+
+.bucket-creator--card-back {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+	border: 2px solid $brightCerulean;
+	border-radius: 10px;
+	background: $grey;
+	cursor: pointer;
 }
 
 .bucket-creator--dropdown {
-	height: 20px;
+	height: auto;
 	width: 80%;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform:  translate(-50%, -50%);
-	border-radius: 5px 5px 0 0;
-}
-
-.bucket-creator--dropdown select {
-	background: $brightCerulean;
-	color: whitesmoke;
-	width: 100%;
-	height: 20px;
 	border-radius: 5px;
-	outline: none;
-	border: none;
-	-webkit-appearance: default-button;
-}
-.bucket-creator--dropdown option {
-	outline: none;
+	background: $darkGrey;
+	margin: 10px;
+	color: $brightCerulean;
 }
 
-.bucket-creator--dropdown select:focus-within {
-	border-radius: 5px 5px 0 0;
+.bucket-creator--dropdown-option {
+	display: none;
+	margin-bottom: 5px;
+	cursor: pointer;
+	padding: 2px;
+}
+
+.bucket-creator--dropdown-option:hover {
+	background: $brightCerulean;
+	color: $darkGrey;
+	transition: 0.2s;
+}
+
+.bucket-creator--dropdown:hover {
+	height: auto;
+	.bucket-creator--dropdown-option {
+		display: flex;
+	}
+	.bucket-creator--dropdown-selected {
+		border-bottom: 1px solid $brightCerulean;
+	}
+}
+.bucket-creator--dropdown-selected {
+	cursor: pointer;
+	padding: 5px;
+	font-size: 15px;
 }
 .dropdown-content h6 {
 	color: black;

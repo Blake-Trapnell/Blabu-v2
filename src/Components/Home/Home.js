@@ -28,8 +28,8 @@ class Home extends Component {
 					{accountBalance ? <h6>{accountBalance}</h6> : <h6>loading...</h6>}
 					{username ? <h6>{username}</h6> : <h6>loading...</h6>}
 					<input onChange = {(e)=>this.inputHandler("difference", e.target.value)} ></input>
-					<button onClick={()=>this.AdjustFunds(difference, user_id, "deposit")} className="btn--blue">Deposit</button>
-					<button onClick={()=>this.AdjustFunds(difference, user_id, "withdraw")}>Withdraw</button>
+					<button onClick={()=>this.AdjustFunds(difference, user_id, "deposit")} className="btn--green">Deposit</button>
+					<button onClick={()=>this.AdjustFunds(difference, user_id, "withdraw")} className="btn--orange">Withdraw</button>
 				</div>
 				<div className="home--budget-manager">
 					<BucketCreator/>
