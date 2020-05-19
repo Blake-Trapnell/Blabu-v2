@@ -64,10 +64,9 @@ $fontFamily: "Oswald", sans-serif;
 	}
 }
 
-.btn--green {
-	background: linear-gradient(124deg, $springGreen, $brightTurqoise);
+.btn--deposit {
+	background: linear-gradient(45deg, $springGreen, $brightCerulean, $violet, $wildStrawberry, $deepSafron, $hayBale, $springGreen, $brightCerulean);
 	background-size: 900% 900%;
-	position: absolute;
 	border: 0;
 	margin: 10px;
 	border-radius: 4px;
@@ -78,13 +77,13 @@ $fontFamily: "Oswald", sans-serif;
 	height: $buttonHeight;
 	outline: none;
 	width: $buttonWidth;
-	-webkit-animation: rainbow 4s ease infinite;
-	-z-animation: rainbow 4s ease infinite;
-	-o-animation: rainbow 4s ease infinite;
-	animation: rainbow 4s ease infinite;
+	-webkit-animation: rainbow 18s ease infinite;
+	-z-animation: rainbow 18s ease infinite;
+	-o-animation: rainbow 18s ease infinite;
+	animation: rainbow 18s ease infinite;
 
 		&:hover {
-			background: linear-gradient(124deg, $diamond, $brightCerulean);
+			background: linear-gradient(45deg, $diamond, $brightCerulean);
 			background-size: 900%, 900%;
 	}
 }
