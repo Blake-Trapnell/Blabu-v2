@@ -65,7 +65,7 @@ $fontFamily: "Oswald", sans-serif;
 }
 
 .btn--deposit {
-	background: linear-gradient(45deg, $springGreen, $brightCerulean, $violet, $wildStrawberry, $deepSafron, $hayBale, $springGreen, $brightCerulean);
+	background: linear-gradient(45deg, $springGreen, $brightCerulean);
 	background-size: 900% 900%;
 	border: 0;
 	margin: 10px;
@@ -77,15 +77,11 @@ $fontFamily: "Oswald", sans-serif;
 	height: $buttonHeight;
 	outline: none;
 	width: $buttonWidth;
-	-webkit-animation: rainbow 18s ease infinite;
-	-z-animation: rainbow 18s ease infinite;
-	-o-animation: rainbow 18s ease infinite;
-	animation: rainbow 18s ease infinite;
-
-		&:hover {
-			background: linear-gradient(45deg, $diamond, $brightCerulean);
-			background-size: 900%, 900%;
-	}
+	-webkit-animation: rainbow 2s ease infinite;
+	-z-animation: rainbow 2s ease infinite;
+	-o-animation: rainbow 2s ease infinite;
+	animation: rainbow 2s ease infinite;
+	cursor: pointer;
 }
 
 

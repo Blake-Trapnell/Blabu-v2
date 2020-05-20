@@ -1,0 +1,45 @@
+@import "../../styles/colors.scss";
+
+.dropdown-menu {
+	height: auto;
+	width: 80%;
+	border-radius: 5px;
+	background: $darkGrey;
+	margin: 10px;
+	color: $brightCerulean;
+}
+
+.dropdown-menu--option {
+	display: none;
+	margin-bottom: 5px;
+	cursor: pointer;
+	padding: 2px;
+}
+
+.dropdown-menu--option:hover {
+	background: $brightCerulean;
+	color: $darkGrey;
+	transition: 0.2s;
+}
+
+.dropdown-menu:hover {
+	height: auto;
+	.dropdown-menu--option {
+		display: flex;
+	}
+	.dropdown-menu--selected {
+		border-bottom: 1px solid $brightCerulean;
+	}
+}
+.dropdown-menu--selected {
+	cursor: pointer;
+	padding: 5px;
+	font-size: 15px;
+}
+
+// .dropdown-content h6 {
+// 	color: black;
+// 	padding: 12px 16px;
+// 	text-decoration: none;
+// 	display: block;
+// }

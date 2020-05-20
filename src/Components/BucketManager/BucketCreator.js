@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import functions from "../../utils/functions.js";
+import DropdownMenu from "../Utils/DropdownMenu.js";
+import DropdownOptions from "../Utils/DropdownOptions.js";
 import PlusIconSvg from "../SVG/PlusIconSvg.js";
 import "./bucketcreator.scss";
 
@@ -25,25 +27,10 @@ import "./bucketcreator.scss";
 					<PlusIconSvg/>
 			</div>
 			<div className="bucket-creator--card-back">
-				<h3>Type</h3>
-				<div className="bucket-creator--dropdown">
-					<h5 className="bucket-creator--dropdown-selected">{type}</h5>
-					<h5 onClick={()=> inputHandler("type", "Flat")} className="bucket-creator--dropdown-option">Flat</h5>
-					<h5 onClick={()=> inputHandler("type", "Percentage of Total")} className="bucket-creator--dropdown-option">Percentage of deposit</h5>
-					<h5 onClick={()=> inputHandler("type", "Percentage of Remaining")} className="bucket-creator--dropdown-option">Percentage of remaining</h5>
-					<h5 onClick={()=> inputHandler("type", "Remainder")} className="bucket-creator--dropdown-option">Remainder</h5>
-				</div>
+				<DropdownMenu options ={DropdownOptions.BucketCreatorType} action={inputHandler} currentlySelected={type}/>
 				<h3>starting Amount</h3>
 				<input placeholder="current funds"></input>
-				<h3>Payment Type</h3>
-				<div className="bucket-creator--dropdown">
-					<h5 className="bucket-creator--dropdown-selected">{paymentType}</h5>
-					<h5 onClick={()=> inputHandler("paymentType", "Manual")} className="bucket-creator--dropdown-option">Manual</h5>
-					<h5 onClick={()=> inputHandler("paymentType", "Monthly")} className="bucket-creator--dropdown-option">Monthly</h5>
-					<h5 onClick={()=> inputHandler("paymentType", "Quarterly")} className="bucket-creator--dropdown-option">Quarterly</h5>
-					<h5 onClick={()=> inputHandler("paymentType", "Semi Yearly")} className="bucket-creator--dropdown-option">Semi Yearly</h5>
-					<h5 onClick={()=> inputHandler("paymentType", "Yearly")} className="bucket-creator--dropdown-option">Yearly</h5>
-				</div>
+				<DropdownMenu options ={DropdownOptions.BucketCreatorPaymentType} action={inputHandler} currentlySelected ={paymentType}/>
 				<div className="bucket-creator--button-container">
 					<button>Create</button>
 					<button onClick={()=> inputHandler("flipped", !flipped)}>Cancel</button>
