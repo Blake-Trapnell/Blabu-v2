@@ -26,14 +26,21 @@ import "./bucketcreator.scss";
 				<h3>Create new Bucket</h3>
 					<PlusIconSvg/>
 			</div>
-			<div className="bucket-creator--card-back">
-				<DropdownMenu options ={DropdownOptions.BucketCreatorType} action={inputHandler} currentlySelected={type}/>
-				<h3>starting Amount</h3>
-				<input placeholder="current funds"></input>
-				<DropdownMenu options ={DropdownOptions.BucketCreatorPaymentType} action={inputHandler} currentlySelected ={paymentType}/>
-				<div className="bucket-creator--button-container">
-					<button>Create</button>
-					<button onClick={()=> inputHandler("flipped", !flipped)}>Cancel</button>
+			<div className="bucket-creator--card-back--outer">
+				<div className="bucket-creator--card-back--inner">
+					<DropdownMenu options ={DropdownOptions.BucketCreatorType} action={inputHandler} currentlySelected={type}/>
+					<h3>Amount</h3>
+					{type === "Remainder" ? null : 
+					<div className="bucket-creator--amount-container">
+					<input className="bucket-creator--input" onChange={(e)=>inputHandler("deposit amount", e.target.value)}/>
+					{type === "Flat" ? <h3>$</h3> : <h3>%</h3>}
+					</div>
+					}
+					<DropdownMenu options ={DropdownOptions.BucketCreatorPaymentType} action={inputHandler} currentlySelected ={paymentType}/>
+					<div className="bucket-creator--button-container">
+						<button>Create</button>
+						<button onClick={()=> inputHandler("flipped", !flipped)}>Cancel</button>
+					</div>
 				</div>
 			</div>
 			</div>

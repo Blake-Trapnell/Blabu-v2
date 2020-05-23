@@ -1,6 +1,27 @@
 @import "../../styles/colors.scss";
 @import "../../styles/components.scss";
 
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
 .bucket-creator--outer-container {
 	position: relative;
 	display: flex;
@@ -16,7 +37,7 @@
 	width: 100%;
 	transform-style: preserve-3d;
 	transition: all 0.5s ease;
-	color: $darkGrey;
+	color: white;
 }
 
 .true {
@@ -40,14 +61,39 @@
 	cursor: pointer;
 }
 
-.bucket-creator--card-back {
+.bucket-creator--card-back--outer {
 	position: absolute;
+	background: linear-gradient(45deg, $deepSafron, $hayBale, $springGreen, $cyanSky, $violet, $wildStrawberry);
+	background-size: 150% 150%;
 	height: 100%;
 	width: 100%;
 	backface-visibility: hidden;
 	transform: rotateY(180deg);
-	border: 2px solid $brightCerulean;
 	border-radius: 10px;
-	background: $grey;
 	cursor: pointer;
+	-webkit-animation: rainbow 12s ease infinite;
+	-z-animation: rainbow 12s ease infinite;
+	-o-animation: rainbow 12s ease infinite;
+	animation: rainbow 12s ease infinite;
+}
+
+.bucket-creator--card-back--inner {
+	position: absolute;
+	height: 96%;
+	width: 96%;
+	left: 2%;
+	top: 2%;
+	background: $darkGrey;
+	border-radius: 10px;
+}
+
+.bucket-creator--input {
+	width: 60px;
+	margin: 10px;
+}
+
+.bucket-creator--amount-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
