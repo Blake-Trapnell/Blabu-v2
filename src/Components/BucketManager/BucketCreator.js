@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import functions from "../../utils/functions.js";
 import DropdownMenu from "../Utils/DropdownMenu.js";
 import DropdownOptions from "../Utils/DropdownOptions.js";
-import PlusIconSvg from "../SVG/PlusIconSvg.js";
+import {PlusIconSvg, CheckIconSvg, CloseIconSvg} from "../SVG/SVG.js";
 import "./bucketcreator.scss";
 
 
@@ -38,8 +38,8 @@ import "./bucketcreator.scss";
 					}
 					<DropdownMenu options ={DropdownOptions.BucketCreatorPaymentType} action={inputHandler} currentlySelected ={paymentType}/>
 					<div className="bucket-creator--button-container">
-						<button>Create</button>
-						<button onClick={()=> inputHandler("flipped", !flipped)}>Cancel</button>
+						<CheckIconSvg/>
+						<CloseIconSvg onClick={()=> inputHandler("flipped", !flipped)}/>
 					</div>
 				</div>
 			</div>

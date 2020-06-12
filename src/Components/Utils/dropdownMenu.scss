@@ -6,7 +6,8 @@
 	border-radius: 5px;
 	background: $darkGrey;
 	margin: 10px;
-	color: $brightCerulean;
+	color: whitesmoke;
+	border: 1px solid rgb(150, 150, 150);
 }
 
 .dropdown-menu--option {
@@ -16,9 +17,16 @@
 	padding: 2px;
 }
 
+.dropdown-menu--option-container {
+	position: absolute;
+	background: $darkGrey;
+	width: 80%;
+	border-radius: 5px;
+}
+
 .dropdown-menu--option:hover {
-	background: $brightCerulean;
-	color: $darkGrey;
+	background: #616161;
+	color: whitesmoke;
 	transition: 0.2s;
 }
 
@@ -28,7 +36,10 @@
 		display: flex;
 	}
 	.dropdown-menu--selected {
-		border-bottom: 1px solid $brightCerulean;
+		border-radius: 5px 5px 0 0;
+	}
+	.dropdown-menu--option-container {
+		border: 1px solid rgb(150, 150, 150);
 	}
 }
 .dropdown-menu--selected {
