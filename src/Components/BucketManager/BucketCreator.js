@@ -38,8 +38,12 @@ import "./bucketcreator.scss";
 					}
 					<DropdownMenu options ={DropdownOptions.BucketCreatorPaymentType} action={inputHandler} currentlySelected ={paymentType}/>
 					<div className="bucket-creator--button-container">
+						<div className="bucket-creator--svg-container">
 						<CheckIconSvg/>
-						<CloseIconSvg onClick={()=> inputHandler("flipped", !flipped)}/>
+						</div>
+						<div className="bucket-creator--svg-container" onClick={()=> inputHandler("flipped", !flipped)}>
+							<CloseIconSvg/>
+						</div>
 					</div>
 				</div>
 			</div>
