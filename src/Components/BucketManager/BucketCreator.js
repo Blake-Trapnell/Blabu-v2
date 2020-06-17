@@ -23,8 +23,10 @@ import "./bucketcreator.scss";
 		<div className="bucket-creator--outer-container">
 			<div className={`bucket-creator--card-container ${flipped}`}>
 			<div onClick={()=> inputHandler("flipped", !flipped)} className="bucket-creator--card-front">
+				<div className="bucket-creator--card-front--inner">
 				<h3>Create new Bucket</h3>
-					<PlusIconSvg/>
+					<PlusIconSvg className="rainbow-icon bucket-creator--svg"/>
+				</div>
 			</div>
 			<div className="bucket-creator--card-back--outer">
 				<div className="bucket-creator--card-back--inner">
@@ -39,10 +41,10 @@ import "./bucketcreator.scss";
 					<DropdownMenu options ={DropdownOptions.BucketCreatorPaymentType} action={inputHandler} currentlySelected ={paymentType}/>
 					<div className="bucket-creator--button-container">
 						<div className="bucket-creator--svg-container">
-						<CheckIconSvg/>
+						<CheckIconSvg className="bucket-creator--svg"/>
 						</div>
 						<div className="bucket-creator--svg-container" onClick={()=> inputHandler("flipped", !flipped)}>
-							<CloseIconSvg/>
+							<CloseIconSvg className="bucket-creator--svg"/>
 						</div>
 					</div>
 				</div>

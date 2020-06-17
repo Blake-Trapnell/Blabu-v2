@@ -21,6 +21,7 @@
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
+$rainbowBackground: linear-gradient(45deg, $deepSafron, $hayBale, $springGreen, $cyanSky, $violet, $wildStrawberry);
 
 .bucket-creator--outer-container {
 	position: relative;
@@ -43,6 +44,9 @@
 .true {
 	transform: rotatey(180deg);
 	height: 100%;
+	.bucket-creator--card-front--inner {
+		display: none;
+	}
 }
 
 .bucket-creator--card-front {
@@ -52,24 +56,37 @@
 	height: 100%;
 	width: 100%;
 	backface-visibility: hidden;
-	background: $darkGrey;
-	border: 2px solid $brightCerulean;
-	border-radius: 10px;
-	color: $brightCerulean;
+	background: $rainbowBackground;
+	background-size: 300% 300%;
+	border-radius: 5px;
+	color: whitesmoke;
 	justify-content: space-around;
 	align-items: center;
 	cursor: pointer;
+	-webkit-animation: rainbow 8s ease infinite;
+	-z-animation: rainbow 8s ease infinite;
+	-o-animation: rainbow 8s ease infinite;
+	animation: rainbow 8s ease infinite;
+}
+.bucket-creator--card-front--inner {
+	position: absolute;
+	height: calc(100% - 4px);
+	width: calc(100% - 4px);
+	left: 2px;
+	top: 2px;
+	background: $darkGrey;
+	border-radius: 5px;
 }
 
 .bucket-creator--card-back--outer {
 	position: absolute;
-	background: linear-gradient(45deg, $deepSafron, $hayBale, $springGreen, $cyanSky, $violet, $wildStrawberry);
+	background: $rainbowBackground;
 	background-size: 300% 300%;
 	height: 100%;
 	width: 100%;
 	backface-visibility: hidden;
 	transform: rotateY(180deg);
-	border-radius: 10px;
+	border-radius: 5px;
 	cursor: pointer;
 	-webkit-animation: rainbow 8s ease infinite;
 	-z-animation: rainbow 8s ease infinite;
@@ -79,10 +96,10 @@
 
 .bucket-creator--card-back--inner {
 	position: absolute;
-	height: calc(100% - 10px);
-	width: calc(100% - 10px);
-	left: 5px;
-	top: 5px;
+	height: calc(100% - 4px);
+	width: calc(100% - 4px);
+	left: 2px;
+	top: 2px;
 	background: $darkGrey;
 	border-radius: 5px;
 }

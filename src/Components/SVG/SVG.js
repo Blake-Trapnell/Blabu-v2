@@ -3,15 +3,22 @@ import React from "react";
 export const PlusIconSvg = () => {
 	return (
 		<svg
-			width="64pt"
-			height="64pt"
+			width="50pt"
+			height="50pt"
 			version="1.1"
 			viewBox="0 0 64 64"
 			xmlns="http://www.w3.org/2000/svg"
 		>
+			<linearGradient id="rainbow-gradient" x2="1" y2="1">
+				<stop offset="0%" stopColor="#FFAA32" />
+				<stop offset="25%" stopColor="#f4d50c" />
+				<stop offset="50%" stopColor="#FF35A7" />
+				<stop offset="75%" stopColor="#1CCAD8" />
+				<stop offset="100%" stopColor="#0CF574" />
+			</linearGradient>
 			<path
 				d="m32 3.0273c-7.4258 0-14.852 2.8242-20.5 8.4727-11.301 11.301-11.301 29.699 0 41 5.6484 5.6484 13.102 8.5 20.5 8.5s14.852-2.8516 20.5-8.5c11.301-11.301 11.301-29.699 0-41-5.6484-5.6484-13.074-8.4727-20.5-8.4727zm0 2.9727c6.6484 0 13.301 2.5508 18.402 7.5977 10.098 10.152 10.098 26.652 0 36.805-10.152 10.148-26.652 10.148-36.75 0-10.152-10.152-10.152-26.652-0.050782-36.805 5.0977-5.0469 11.75-7.5977 18.398-7.5977zm0 15c-0.85156 0-1.5 0.64844-1.5 1.5v8h-8c-0.85156 0-1.5 0.64844-1.5 1.5s0.64844 1.5 1.5 1.5h8v8c0 0.85156 0.64844 1.5 1.5 1.5s1.5-0.64844 1.5-1.5v-8h8c0.85156 0 1.5-0.64844 1.5-1.5s-0.64844-1.5-1.5-1.5h-8v-8c0-0.85156-0.64844-1.5-1.5-1.5z"
-				fill="#1CCAD8"
+				fill="url(#rainbow-gradient)"
 			/>
 		</svg>
 	);
@@ -20,18 +27,24 @@ export const PlusIconSvg = () => {
 export const CheckIconSvg = () => {
 	return (
 		<svg
-			enable-background="new 0 0 512 512"
 			version="1.1"
 			viewBox="0 0 512 512"
 			space="preserve"
 			xmlns="http://www.w3.org/2000/svg"
 		>
+			<linearGradient id="checkicon-rainbow-gradient" x2="1" y2="1">
+				<stop offset="0%" stopColor="#FFAA32" />
+				<stop offset="25%" stopColor="#f4d50c" />
+				<stop offset="50%" stopColor="#FF35A7" />
+				<stop offset="75%" stopColor="#1CCAD8" />
+				<stop offset="100%" stopColor="#0CF574" />
+			</linearGradient>
 			<path
-				fill="#FFAA32"
+				fill="url(#checkicon-rainbow-gradient)"
 				d="m437.02 74.98c-48.352-48.351-112.64-74.98-181.02-74.98-68.381 0-132.67 26.629-181.02 74.98-48.352 48.352-74.98 112.64-74.98 181.02s26.628 132.67 74.98 181.02 112.64 74.981 181.02 74.981c68.38 0 132.67-26.629 181.02-74.981s74.981-112.64 74.981-181.02-26.629-132.67-74.981-181.02zm-181.02 407.02c-124.62 0-226-101.38-226-226s101.38-226 226-226 226 101.38 226 226-101.38 226-226 226z"
 			/>
 			<path
-				fill="#FFAA32"
+				fill="url(#checkicon-rainbow-gradient)"
 				d="m378.3 173.86c-5.857-5.856-15.355-5.856-21.212 1e-3l-132.46 132.46-69.727-69.727c-5.857-5.857-15.355-5.857-21.213 0s-5.858 15.355 0 21.213l80.333 80.333c2.929 2.929 6.768 4.393 10.606 4.393s7.678-1.465 10.606-4.393l143.07-143.07c5.858-5.857 5.858-15.355 0-21.213z"
 			/>
 		</svg>
@@ -41,7 +54,7 @@ export const CheckIconSvg = () => {
 export const CloseIconSvg = () => {
 	return (
 		<svg
-			enable-background="new 0 0 496 496"
+			enableBackground="new 0 0 496 496"
 			version="1.1"
 			viewBox="0 0 496 496"
 			space="preserve"
