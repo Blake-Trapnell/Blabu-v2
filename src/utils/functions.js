@@ -2,7 +2,6 @@ export function inputHandler(key, value) {
 	this.setState({
 		[key]: value,
 	});
-
 }
 
 export function switchHandler(key, value) {
@@ -15,9 +14,8 @@ export function getTodayAndCurrentTime() {
 	let today =
 		date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
 	let time = date.getHours() + "-" + date.getMinutes();
-	return today + "-" + time
+	return today + "-" + time;
 }
-
 
 export default {
 	inputHandler,

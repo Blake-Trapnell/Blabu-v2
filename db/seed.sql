@@ -15,8 +15,11 @@ CREATE TABLE buckets(
 bucket_id SERIAL PRIMARY KEY,
 user_id INT,
 name TEXT,
+type INT,
+payment_type INT,
 current_amount INT,
-Goal_amount INT
+goal_amount INT,
+time_stamp TEXT
 );
 
 CREATE TABLE income (
