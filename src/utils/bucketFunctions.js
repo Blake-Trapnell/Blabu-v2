@@ -1,5 +1,5 @@
 import axios from "axios";
-import Swal from "sweetalert2"
+import {getTodayAndCurrentTime} from "./functions.js";
 
 export async function removeBucket(bucket_id, i) {
 	axios.put('api/remove/bucket', {bucket_id})
@@ -10,25 +10,18 @@ export async function removeBucket(bucket_id, i) {
 	})
 }
 export async function saveBucket (state) {
-	const Toast = Swal.mixin({
-		toast: true,
-		position: 'top-end',
-		showConfirmButton: false,
-		timer: 3000,
-	})
-	let { name, starting, goal } = state
-	let res = await axios.post(`/user/add/bucket`, { name, starting, goal })
+	console.log("run")
+	let { name, type, paymentType, goalAmount} = state
+	let t_stamp = getTodayAndCurrentTime()
+	let res = await axios.post(`/user/addbucket`, { name, type, paymentType, goalAmount, t_stamp})
 	if (res.data.type === "error") {
-		Toast.fire({
-			type: res.data.type,
-			title: res.data.title,
-		})
 		return
 	}
 	else {
 		window.location.reload(false)
 	}
 }
+
 export function inputHandler (key, value) {
 	this.setState({
 		[key]: value

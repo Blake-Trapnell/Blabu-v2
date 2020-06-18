@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import functions from "../../utils/functions.js";
+import bucketFunctions from "../../utils/bucketFunctions.js";
 import DropdownMenu from "../Utils/DropdownMenu.js";
 import DropdownOptions from "../Utils/DropdownOptions.js";
 import { PlusIconSvg, CheckIconSvg, CloseIconSvg } from "../SVG/SVG.js";
@@ -12,7 +13,8 @@ class BucketCreator extends Component {
 			type: "Flat",
 			flipped: false,
 			paymentType: "Manual",
-			depositAmount: 0,
+			goalAmount: 0,
+			name: "",
 		};
 		this.inputHandler = functions.inputHandler.bind(this);
 	}
@@ -47,7 +49,7 @@ class BucketCreator extends Component {
 										className="bucket-creator--input"
 										onChange={(e) =>
 											inputHandler(
-												"depositAmount",
+												"goalAmount",
 												e.target.value
 											)
 										}
@@ -64,7 +66,9 @@ class BucketCreator extends Component {
 							/>
 							<div className="bucket-creator--button-container">
 								<div className="bucket-creator--svg-container">
-									<CheckIconSvg className="bucket-creator--svg" />
+									<div onClick={()=>bucketFunctions.saveBucket(this.state)}>
+									<CheckIconSvg  className="bucket-creator--svg" />
+									</div>
 								</div>
 								<div
 									className="bucket-creator--svg-container"
